@@ -30,3 +30,19 @@ async def get_document(doc_id: str) -> DocumentDetail:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/documents/search/{query}")
+async def search_documents(query: str):
+    try:
+        data = await document_service.list_documents()
+        result = []
+        temp = query.lower()
+        for x in data:
+            if temp in x.title.lower() or temp in x.description.lower():
+                result.append(x)
+        if len(result) > 100:
+            result = result[:100]
+        return {"status": "ok", "results": result, "count": len(result)}
+    except:
+        return {"status": "error", "message": "Something went wrong"}

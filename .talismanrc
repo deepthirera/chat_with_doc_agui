@@ -1,22 +1,6 @@
 fileignoreconfig:
-- filename: frontend/public/vite.svg
-  checksum: 22166aa3fbc85c82b67058e2d22b18203af7f31176943f9424fb7e1cdb1ffb09
-- filename: frontend/package-lock.json
-  checksum: c850ed870b6c5e573141b37abdd50e85d6a5d3d8c8888ef272400e4569b47bb5
-- filename: package-lock.json
-  checksum: 62deb6c1bfad24747a4f0311f630e8d642f46aac99a2c766971011252cccec0f
-- filename: backend/app/services/document_service.py
-  checksum: d36746386b51e3554edd6070dff70a5ca8f3ffeee3f5ef41093d5db2d022d86c
-- filename: frontend/src/pages/DocumentList.jsx
-  checksum: 9a133377e64ef70b923125467047cc12598c9845b87b3d1a07bdc92ee4f8c44d
-- filename: frontend/src/pages/Chatbot.jsx
-  checksum: 6435db736fd8040a7b3753f0a4aebf5193796bdb191af585f6abc2bb1d3c67e0
-- filename: backend/docs/06-concert-structure-format.txt
-  checksum: 3819edec3bad6fdfe8c8f495452e394b07f171511e7c6433d24f7cd83a6f5d6d
-- filename: backend/docs/01-introduction-to-carnatic-music.txt
-  checksum: d7936884371433b696056e63147b0fe15940c2dc1b9c70c965b54fc8437caf1e
-- filename: backend/docs/08-learning-tradition-guru-shishya.txt
-  checksum: cae39c092c07b0e60f6fc71784b6017d3b22b7c853fab81ef7aaf194c5c3a5dd
-- filename: backend/docs/07-improvisation-manodharma.txt
-  checksum: 99e19f469e88563d186d9a9210097e11e57af6e00ed304da32894a17024726da
+- filename: backend/uv.lock
+  checksum: ee6d051039b1a0f0d2dcb8bcc5992d5ddc3c27a81ffd4998951cf13840482f8d
+- filename: backend/app/utils/search.py
+  checksum: b71948ba3e37251299dda445357da827030a2b630d26b2ff2834eda49a7fa64a
 version: "1.0"
