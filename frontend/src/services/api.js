@@ -1,11 +1,10 @@
 import axios from 'axios'
-
-const API_BASE_URL = 'http://localhost:8000/api'
+import { API_CONFIG } from '../constants'
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_CONFIG.BASE_URL,
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': API_CONFIG.HEADERS.CONTENT_TYPE,
   },
 })
 
@@ -14,7 +13,7 @@ export const documentAPI = {
    * Get list of all documents
    */
   listDocuments: async () => {
-    const response = await api.get('/documents')
+    const response = await api.get(API_CONFIG.ENDPOINTS.DOCUMENTS)
     return response.data
   },
 
@@ -22,7 +21,7 @@ export const documentAPI = {
    * Get specific document by ID
    */
   getDocument: async (docId) => {
-    const response = await api.get(`/documents/${docId}`)
+    const response = await api.get(`${API_CONFIG.ENDPOINTS.DOCUMENTS}/${docId}`)
     return response.data
   },
 }
@@ -31,7 +30,7 @@ export const chatAPI = {
   /**
    * Get streaming chat endpoint URL
    */
-  getStreamURL: () => `${API_BASE_URL}/chat/stream`,
+  getStreamURL: () => `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.CHAT_STREAM}`,
 }
 
 export default api

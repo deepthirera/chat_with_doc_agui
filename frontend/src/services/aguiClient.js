@@ -3,6 +3,8 @@
  * Handles Server-Sent Events for streaming chat responses
  */
 
+import { AGUI_EVENTS, SSE_CONFIG, API_CONFIG } from '../constants'
+
 export class AGUIClient {
   constructor(url) {
     this.url = url
@@ -34,9 +36,9 @@ export class AGUIClient {
 
       // Initiate fetch with streaming
       const response = await fetch(this.url, {
-        method: 'POST',
+        method: API_CONFIG.METHODS.POST,
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': API_CONFIG.HEADERS.CONTENT_TYPE,
         },
         body,
       })
@@ -59,9 +61,9 @@ export class AGUIClient {
 
         // Parse SSE events (format: data: {json}\n\n)
         const events = chunk
-          .split('\n\n')
-          .filter((line) => line.startsWith('data: '))
-          .map((line) => line.replace('data: ', ''))
+          .split(SSE_CONFIG.EVENT_DELIMITER)
+          .filter((line) => line.startsWith(SSE_CONFIG.DATA_PREFIX))
+          .map((line) => line.replace(SSE_CONFIG.DATA_PREFIX, ''))
 
         // Process each event
         for (const eventStr of events) {
@@ -70,19 +72,19 @@ export class AGUIClient {
 
             // Dispatch based on AG-UI event type
             switch (event.type) {
-              case 'RUN_STARTED':
+              case AGUI_EVENTS.RUN_STARTED:
                 onRunStarted(event)
                 break
-              case 'TEXT_MESSAGE_START':
+              case AGUI_EVENTS.TEXT_MESSAGE_START:
                 onMessageStart(event)
                 break
-              case 'TEXT_MESSAGE_CONTENT':
+              case AGUI_EVENTS.TEXT_MESSAGE_CONTENT:
                 onMessageContent(event)
                 break
-              case 'TEXT_MESSAGE_END':
+              case AGUI_EVENTS.TEXT_MESSAGE_END:
                 onMessageEnd(event)
                 break
-              case 'RUN_FINISHED':
+              case AGUI_EVENTS.RUN_FINISHED:
                 onRunFinished(event)
                 break
               default:
