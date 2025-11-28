@@ -1,0 +1,20 @@
+Introduction to AG-UI Protocol
+
+AG-UI (Agent-User Interaction Protocol) is an open, event-based protocol designed to enable dynamic communication between agentic frontends and backends.
+
+Key Features:
+- Event-based architecture with ~16 standard event types
+- Supports Server-Sent Events (SSE) and WebSocket transport
+- Bidirectional communication between agents and UIs
+- Lifecycle management (RUN_STARTED, RUN_FINISHED)
+- Streaming text messages (TEXT_MESSAGE_START, TEXT_MESSAGE_CONTENT, TEXT_MESSAGE_END)
+- Tool call coordination
+- State synchronization
+
+Use Cases:
+- AI chatbots with streaming responses
+- Agent-driven user interfaces
+- Real-time AI interactions
+- Multi-step agent workflows
+
+The protocol is MIT licensed and maintained by CopilotKit, with support for React, Vue, Angular, and other modern frameworks.

@@ -1,0 +1,12 @@
+fileignoreconfig:
+- filename: frontend/public/vite.svg
+  checksum: 22166aa3fbc85c82b67058e2d22b18203af7f31176943f9424fb7e1cdb1ffb09
+- filename: frontend/package-lock.json
+  checksum: c850ed870b6c5e573141b37abdd50e85d6a5d3d8c8888ef272400e4569b47bb5
+- filename: backend/app/services/document_service.py
+  checksum: 351ba38f34c426e031021eca4b835d47173a5913cea4f19154869c6e6385d782
+- filename: frontend/src/pages/DocumentList.jsx
+  checksum: 9a133377e64ef70b923125467047cc12598c9845b87b3d1a07bdc92ee4f8c44d
+- filename: frontend/src/pages/Chatbot.jsx
+  checksum: 6435db736fd8040a7b3753f0a4aebf5193796bdb191af585f6abc2bb1d3c67e0
+version: "1.0"
