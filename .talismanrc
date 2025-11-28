@@ -6,7 +6,7 @@ fileignoreconfig:
 - filename: package-lock.json
   checksum: 62deb6c1bfad24747a4f0311f630e8d642f46aac99a2c766971011252cccec0f
 - filename: backend/app/services/document_service.py
-  checksum: 351ba38f34c426e031021eca4b835d47173a5913cea4f19154869c6e6385d782
+  checksum: d36746386b51e3554edd6070dff70a5ca8f3ffeee3f5ef41093d5db2d022d86c
 - filename: frontend/src/pages/DocumentList.jsx
   checksum: 9a133377e64ef70b923125467047cc12598c9845b87b3d1a07bdc92ee4f8c44d
 - filename: frontend/src/pages/Chatbot.jsx

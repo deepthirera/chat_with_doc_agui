@@ -1,12 +1,14 @@
 """Document file operations service"""
 import os
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Optional
+
+from app.models.document import DocumentInfo, DocumentDetail
 
 DOCS_DIR = Path(__file__).parent.parent.parent / "docs"
 
 
-async def list_documents() -> List[Dict[str, str]]:
+async def list_documents() -> List[DocumentInfo]:
     """
     List all documents in the docs directory
 
@@ -20,16 +22,18 @@ async def list_documents() -> List[Dict[str, str]]:
 
     for file_path in DOCS_DIR.iterdir():
         if file_path.is_file() and file_path.suffix in [".txt", ".md"]:
-            documents.append({
-                "id": file_path.stem,
-                "name": file_path.name,
-                "size": file_path.stat().st_size,
-            })
+            documents.append(
+                DocumentInfo(
+                    id=file_path.stem,
+                    name=file_path.name,
+                    size=file_path.stat().st_size,
+                )
+            )
 
-    return sorted(documents, key=lambda x: x["name"])
+    return sorted(documents, key=lambda x: x.name)
 
 
-async def get_document(doc_id: str) -> Optional[Dict[str, str]]:
+async def get_document(doc_id: str) -> Optional[DocumentDetail]:
     """
     Get document content by ID
 
@@ -44,11 +48,11 @@ async def get_document(doc_id: str) -> Optional[Dict[str, str]]:
         file_path = DOCS_DIR / f"{doc_id}{ext}"
         if file_path.exists():
             content = file_path.read_text(encoding="utf-8")
-            return {
-                "id": doc_id,
-                "name": file_path.name,
-                "content": content,
-            }
+            return DocumentDetail(
+                id=doc_id,
+                name=file_path.name,
+                content=content,
+            )
 
     return None
 
@@ -66,13 +70,13 @@ async def get_documents_content(doc_ids: Optional[List[str]] = None) -> str:
     if doc_ids is None:
         # Get all documents
         docs = await list_documents()
-        doc_ids = [doc["id"] for doc in docs]
+        doc_ids = [doc.id for doc in docs]
 
     content_parts = []
 
     for doc_id in doc_ids:
         doc = await get_document(doc_id)
         if doc:
-            content_parts.append(f"=== Document: {doc['name']} ===\n{doc['content']}\n")
+            content_parts.append(f"=== Document: {doc.name} ===\n{doc.content}\n")
 
     return "\n".join(content_parts)
