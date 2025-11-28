@@ -3,6 +3,8 @@ fileignoreconfig:
   checksum: 22166aa3fbc85c82b67058e2d22b18203af7f31176943f9424fb7e1cdb1ffb09
 - filename: frontend/package-lock.json
   checksum: c850ed870b6c5e573141b37abdd50e85d6a5d3d8c8888ef272400e4569b47bb5
+- filename: package-lock.json
+  checksum: 62deb6c1bfad24747a4f0311f630e8d642f46aac99a2c766971011252cccec0f
 - filename: backend/app/services/document_service.py
   checksum: 351ba38f34c426e031021eca4b835d47173a5913cea4f19154869c6e6385d782
 - filename: frontend/src/pages/DocumentList.jsx
