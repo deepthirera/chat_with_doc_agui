@@ -1,0 +1,7 @@
+Ragas: The Melodic Framework
+
+A raga is the fundamental melodic framework in Carnatic music, consisting of a specific set of notes arranged in ascending (aroha) and descending (avaroha) patterns. Each raga has a unique character determined by its scale, characteristic phrases, and emotional content. Ragas are classified based on their parent scales called melakartas, of which there are 72 fundamental scales in Carnatic music.
+
+The identity of a raga extends beyond just its notes. Each raga has distinctive phrases (sancharas), important notes (jeeva swaras), and specific rules governing note movements and ornamentations. Some ragas are associated with particular times of day or seasons, believed to evoke specific moods when performed at appropriate times. For example, raga Bhairavi is typically performed in the early morning, while Kalyani can be performed at any time.
+
+Mastering ragas requires years of dedicated practice and deep understanding of their nuances. Musicians must internalize the raga's personality to improvise effectively during performances. The ability to identify and render ragas accurately is considered fundamental to Carnatic musicianship. Popular ragas like Shankarabharanam, Kalyani, Todi, and Kambhoji form the foundation of a student's learning, while more complex ragas are explored as proficiency develops.
