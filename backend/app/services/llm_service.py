@@ -7,7 +7,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 class LLMService:
     """Service for interacting with local LLM via Ollama"""
 
-    def __init__(self, model: str = "llama3.2", base_url: str = "http://localhost:11434"):
+    def __init__(self, model: str = "mistral:latest", base_url: str = "http://localhost:11434"):
         """
         Initialize LLM service
 

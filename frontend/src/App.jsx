@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import DocumentList from './pages/DocumentList'
 import DocumentView from './pages/DocumentView'
 import Chatbot from './pages/Chatbot'
+import Analytics from './pages/Analytics'
 
 function App() {
   return (
@@ -24,6 +25,12 @@ function App() {
                 >
                   Chatbot
                 </Link>
+                <Link
+                  to="/analytics"
+                  className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-blue-600"
+                >
+                  Analytics
+                </Link>
               </div>
               <div className="flex items-center">
                 <span className="text-sm font-semibold text-gray-700">
@@ -40,6 +47,7 @@ function App() {
             <Route path="/" element={<DocumentList />} />
             <Route path="/document/:docId" element={<DocumentView />} />
             <Route path="/chat" element={<Chatbot />} />
+            <Route path="/analytics" element={<Analytics />} />
           </Routes>
         </main>
       </div>
