@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import chat, documents
+from app.api import chat, documents, analytics
 
 app = FastAPI(
     title="Document Chatbot API",
@@ -22,6 +22,7 @@ app.add_middleware(
 # Include routers
 app.include_router(documents.router, prefix="/api", tags=["documents"])
 app.include_router(chat.router, prefix="/api", tags=["chat"])
+app.include_router(analytics.router, prefix="/api", tags=["analytics"])
 
 
 @app.get("/")

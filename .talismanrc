@@ -1,4 +1,8 @@
 fileignoreconfig:
 - filename: backend/uv.lock
   checksum: ee6d051039b1a0f0d2dcb8bcc5992d5ddc3c27a81ffd4998951cf13840482f8d
+- filename: backend/app/api/analytics.py
+  checksum: 43dc13d6172056752eb32a42dad05b47ee3059f4df20331974b4488b6c0ddaa8
+- filename: frontend/src/pages/Analytics.jsx
+  checksum: 0be91ec34a3196cc427bfab5ed54716a6c35b064548235650687dc4df93c22fa
 version: "1.0"
