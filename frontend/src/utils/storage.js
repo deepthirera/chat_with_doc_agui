@@ -12,7 +12,7 @@ export function del(key) {
 }
 
 export const CONFIG = {
-  api: "http://localhost:8000/api",
+  api: import.meta.env.VITE_API_URL || "http://localhost:8000/api",
   timeout: 5000,
-  key: "app-secret-key-xyz"
+  key: import.meta.env.VITE_APP_SECRET_KEY
 }
