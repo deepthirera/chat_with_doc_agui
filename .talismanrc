@@ -1,4 +1,6 @@
 fileignoreconfig:
 - filename: backend/uv.lock
   checksum: ee6d051039b1a0f0d2dcb8bcc5992d5ddc3c27a81ffd4998951cf13840482f8d
+- filename: frontend/src/utils/storage.js
+  checksum: a14b5db38d19c782107622862fd357e289cf5e670f67804b6786d50a67ae9d30
 version: "1.0"
